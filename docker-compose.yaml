@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+    app:
+        build: 
+            context: ./docker/app
+            dockerfile: Dockerfile-dev
+        ports: 
+            - 8081:443
+            - 8082:80
+        env_file: .env
+        volumes:
+            - ./src:/app:rw
+        # # - Uncomment this block if you need to npm link a local package -------
+        #     - ../<dependancy>:/deps/<dependancy>:rw
+        # command: /bin/sh -c "npm link ../deps/<dependancy> && npm start"
+        # # ----------------------------------------------------------------------
+
+    proxy:
+        build: ./docker/nginx
+        ports:
+            - 8080:443
+        environment: 
+            TARGET_PORT: 8081
+            CERT_FILE: localhost.pem
+            CERT_KEY_FILE: localhost-key.pem
+        volumes:
+            - ~/certs:/certs:ro
+        depends_on: 
+            - app

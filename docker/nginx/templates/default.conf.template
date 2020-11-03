@@ -2,8 +2,8 @@ server {
     listen 443 ssl;
     server_name localhost;
 
-    ssl_certificate /certs/${CERT_FILE};
-    ssl_certificate_key /certs/${CERT_KEY_FILE};
+    ssl_certificate /certs/cert.pem;
+    ssl_certificate_key /certs/key.pem;
 
     ssl_session_cache builtin:1000 shared:SSL:10m;
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;

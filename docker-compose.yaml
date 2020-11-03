@@ -21,9 +21,5 @@ services:
             - 8080:443
         environment: 
             TARGET_PORT: 8081
-            CERT_FILE: localhost.pem
-            CERT_KEY_FILE: localhost-key.pem
-        volumes:
-            - ~/certs:/certs:ro
         depends_on: 
             - app

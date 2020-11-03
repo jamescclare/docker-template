@@ -11,6 +11,7 @@ const app = express();
 
 app.use(morgan('combined'));
 app.get('/status', (req, res) => res.send("OK"));
+app.get('/', (req, res) => res.send("App now running"));
 
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer({

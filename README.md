@@ -1,5 +1,8 @@
 ## Motivation
-This repo is intended to be used as a launching point for dockerised node.js apps running under https.
+This repo is intended to be used as a launching point for dockerised node.js apps running under https, providing encryption to the box.
+
+## Concept
+In the local environment nginx mimics a load blancer, it loads a valid SSL certificate and terminates the trusted SSL connection. However, requests can still retain encrypted all the way to the app box as the app container generates a self-signed certificated to faciliated an untrusted but encrypted connection between load balancer and app. This removes the need to distribute SSL certs to individual app instances, but allows for an e2e encrypted connection.
 
 ## Dependancies
 

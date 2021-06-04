@@ -13,11 +13,11 @@ In the local environment nginx mimics a load blancer, it loads a valid SSL certi
 ## Set-up
 
 1. Run `npm i`.
-1. Run `mkcert -key-file ./docker/nginx/certs/key.pem -cert-file ./docker/nginx/certs/cert.pem localhost host.docker.internal`
-1. Run `cp .env.sample .env` and update the `.env` file.
-2. Run `mkcert localhost`.
+2. Run `mkcert -key-file ./docker/nginx/certs/key.pem -cert-file ./docker/nginx/certs/cert.pem localhost host.docker.internal`
+3. Run `cp .env.sample .env` and update the `.env` file.
 4. Update `src` folder with your app code.
-3. Run `docker-compose up`.
+5. Run `docker-compose up`.
+6. App will now be available at https://localhost and https://localhost:8080.
 
 
 

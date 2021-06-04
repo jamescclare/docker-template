@@ -19,6 +19,7 @@ services:
         build: ./docker/nginx
         ports:
             - 8080:443
+            - 443:443
         environment: 
             TARGET_PORT: 8081
         depends_on: 

@@ -1,7 +1,7 @@
 FROM alpine:3.12 as base
 RUN apk update \
     && apk upgrade \
-    && apk add nodejs=12.18.3-r0 npm=12.18.3-r0 openssl=1.1.1g-r0
+    && apk add nodejs npm openssl
 WORKDIR /app
 
 FROM base as build
